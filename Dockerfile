@@ -1,0 +1,1 @@
+FROM node:18-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm ci --production\nCOPY . .\nENV NODE_ENV=production\nEXPOSE 3000\nCMD ["node", "src/server.js"]\n
